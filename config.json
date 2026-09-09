@@ -1,0 +1,28 @@
+{
+  "max_failed_attempts": 3,
+  "api_keys": {
+    "key-alice": {"user": "alice"},
+    "key-bob": {"user": "bob"},
+    "key-carol": {"user": "carol"}
+  },
+  "tokens": {
+    "tok-alice": {"user": "alice", "exp": 101, "roles": ["reader", "admin"]},
+    "tok-bob": {"user": "bob", "exp": 100, "roles": ["reader"]},
+    "tok-carol": {"user": "carol", "exp": 100, "roles": ["reader"]}
+  },
+  "sessions": {
+    "s-alice": {"expires": 100, "csrf": "csrf-alice"},
+    "s-bob": {"expires": 100, "csrf": "csrf-bob"},
+    "s-carol": {"expires": 100, "csrf": "csrf-carol"}
+  },
+  "lockouts": {
+    "alice": {"failed_attempts": 2},
+    "bob": {"failed_attempts": 2},
+    "carol": {"failed_attempts": 3}
+  },
+  "routes": {
+    "/health": {},
+    "/profile": {"role": "reader"},
+    "/admin": {"role": "admin"}
+  }
+}
